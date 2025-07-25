@@ -11,11 +11,11 @@ def load_sqlmi_table(databaseName: str, schemaName: str, tableName: str) -> Data
     #JDBC Connection to Dev MI - Run this first to create connection strings 
     akv_scope=f"""p-ause-kv-scp-analytics"""
 
-    jdbcHostName = "p-ause-sqlmi-bi-mdap.b785c49bbec3.database.windows.net"
+    jdbcHostName = "<>.<>.database.windows.net"
     jdbcDatabase = databaseName
     jdbcPort = 1433
-    jdbcUsername = dbutils.secrets.get(scope = akv_scope, key = "sec-SAS-sql-user")  #User name and password are stored in Azure keyvault
-    jdbcPassword = dbutils.secrets.get(scope = akv_scope, key = "sec-SAS-sql-password") 
+    jdbcUsername = dbutils.secrets.get(scope = akv_scope, key = "<>")  #User name and password are stored in Azure keyvault
+    jdbcPassword = dbutils.secrets.get(scope = akv_scope, key = "<>") 
     jdbcDriver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
 
     jdbcUrl = f"jdbc:sqlserver://{jdbcHostName}:{jdbcPort};databaseName={jdbcDatabase};user={jdbcUsername};password={jdbcPassword}"
