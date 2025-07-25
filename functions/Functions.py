@@ -9,7 +9,7 @@ from pyspark.errors import AnalysisException
 
 def load_sqlmi_table(databaseName: str, schemaName: str, tableName: str) -> DataFrame:
     #JDBC Connection to Dev MI - Run this first to create connection strings 
-    akv_scope=f"""p-ause-kv-scp-analytics"""
+    akv_scope=f"""<>"""
 
     jdbcHostName = "<>.<>.database.windows.net"
     jdbcDatabase = databaseName
@@ -33,13 +33,13 @@ def load_sqlmi_table(databaseName: str, schemaName: str, tableName: str) -> Data
 
 def load_sqldb_table(databaseName: str, schemaName: str, tableName: str) -> DataFrame:
     #JDBC Connection to Dev MI - Run this first to create connection strings 
-    akv_scope=f"""p-ause-kv-scp-analytics"""
+    akv_scope=f"""<>"""
 
-    jdbcHostName = "mdf-sql-server-1.database.windows.net"
+    jdbcHostName = "<>.database.windows.net"
     jdbcDatabase = databaseName
     jdbcPort = 1433
-    jdbcUsername = "mdf_admin"
-    jdbcPassword = "Passw0rd"
+    jdbcUsername = "<>"
+    jdbcPassword = "<>"
     jdbcDriver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
 
     jdbcUrl = f"jdbc:sqlserver://{jdbcHostName}:{jdbcPort};databaseName={jdbcDatabase};user={jdbcUsername};password={jdbcPassword}"
